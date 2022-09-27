@@ -34,7 +34,7 @@ public class IterativeWay {
         String destination = "destination";
 
         for (int i = 1; i <= moves; i++) {
-            if (i % 3 == 1) { // source to destination
+            if (i % 3 == 1) { // source to destination // 1%3=1
                 helperMoveDiskBetweenTwoPoles(sourceStack, destinationStack, source, destination);
             } else if (i % 3 == 2) { // source to helper
                 helperMoveDiskBetweenTwoPoles(sourceStack, helperStack, source, helper);
@@ -46,8 +46,8 @@ public class IterativeWay {
     }
 
     private static void helperMoveDiskBetweenTwoPoles(Stack pole, Stack destination, String poleSrc, String poleDest) {
-        int sourceTopDisk = pole.empty() ? 0 : (int) pole.pop();
-        int destinationTopDisk = destination.empty() ? 0 : (int) destination.pop();
+        int sourceTopDisk = pole.empty() ? 0 : (int) pole.pop(); // 2
+        int destinationTopDisk = destination.empty() ? 0 : (int) destination.pop(); // 3
 
         if (sourceTopDisk == 0) { // переместить диск c 'helper' на 'source'
             pole.push(destinationTopDisk);
@@ -55,7 +55,7 @@ public class IterativeWay {
         } else if (destinationTopDisk == 0) { // переместить диск с 'source' на 'destination'
             destination.push(sourceTopDisk);
             printMove(sourceTopDisk, poleSrc, poleDest);
-        } else if (sourceTopDisk > destinationTopDisk) { // переместить диск с 'helper' на 'destination'
+        } else if (sourceTopDisk > destinationTopDisk) { // переместить диск с 'source' на 'helper'
             pole.push(sourceTopDisk);
             pole.push(destinationTopDisk);
             printMove(destinationTopDisk, poleDest, poleSrc);

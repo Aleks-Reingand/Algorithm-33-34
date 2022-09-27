@@ -29,15 +29,15 @@ public class BinarySearch {
 
 
         ////
-        int[] arr = getFilledArr(1000);
+        int[] arr = getFilledArr(10000000);
         long timeStart = System.currentTimeMillis();
         // call linearSearch
-        linearSearch(arr, 0, arr.length - 1, 999);
+        linearSearch(arr, 0, arr.length - 1, 9999999);
         System.out.println(System.currentTimeMillis() - timeStart);
 
         timeStart = System.currentTimeMillis();
         // call binarySearch
-        binarySearch(arr, 0, arr.length - 1, 999);
+        binarySearch(arr, 0, arr.length - 1, 9999999);
         System.out.println(System.currentTimeMillis() - timeStart);
     }
 
